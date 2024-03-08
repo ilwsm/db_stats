@@ -1,0 +1,53 @@
+### Register user
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Andrey",
+  "email": "em1@domain2.com",
+  "password": "1234"
+}
+
+### Authenticate user
+POST http://localhost:8080/api/auth/authenticate
+Content-Type: application/json
+
+{
+  "email": "em1@domain.com",
+  "password": "1234"
+}
+
+
+### Retrieve summary statistics for all dates:
+GET http://localhost:8080/api/by_date
+Authorization: Bearer {{my_auth_token}}
+Content-Type: application/x-www-form-urlencoded
+
+### Retrieve statistics for the specified date:
+GET http://localhost:8080/api/by_date/2024-02-21
+Authorization: Bearer {{my_auth_token}}
+
+### Retrieve statistics by the date range:
+GET http://localhost:8080/api/by_date/2024-02-22/2024-02-24
+Authorization: Bearer {{my_auth_token}}
+
+### Retrieve summary statistics for all ASINs:
+GET http://localhost:8080/api/by_asin
+Authorization: Bearer {{my_auth_token}}
+
+### Retrieve statistics for the specified ASIN:
+GET http://localhost:8080/api/by_asin/B09ZDDDS1X
+Authorization: Bearer {{my_auth_token}}
+
+### Output of statistics for list of ASINs:
+GET http://localhost:8080/api/by_asin/B09ZDDDS1X,B0C72K4WKC,B0BYDCRZ8R
+Authorization: Bearer {{my_auth_token}}
+
+### DebugCaching
+GET http://localhost:8080/api/debugCaching
+Authorization: Bearer {{my_auth_token}}
+
+
+### DebugCaching
+GET http://localhost:8080/api2
+Authorization: Bearer {{my_auth_token}}
